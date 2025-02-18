@@ -13,3 +13,12 @@ What to submit
 Either create a markdown readme file that has a copy of your ER diagram and explanation or .pdf version and push that to github.
 Please also submit a link to your github submission to Canvas as well. This helps the TA grade faster. 
 
+# Submission Details
+
+### CSV files ###
+Files are in the data folder. I also included my code as a .py file and a Jupyter notebook in the root directory. I wrote a few lines to make some histograms of the standardized data, though I did not export the images from the notebook. 
+
+### Zoo ERD with Explanation ###
+The following ERD illustrates a database concerned with the feeding schedules of the animals, as well as the support staff responsible for feeding the animals in the different regions of the zoo. I imagined that we might want to keep track of where an animal is in the zoo, so we'd need a zoo 'region' as well as a container of some sort within the region. The containers might contain one or more animals, and the container might allow one or more species. The diet of each animal might consist of a single feeding once a day, or several feedings throughout the day or night. The Feed_Schedule table allows as many rows as needed per animal per day. What the animal eats might vary by time of day, so we might create a row in Diet for breakfast for a monkey, another for lunch, and a third for dinner. Then, each of those Diet rows are associated with a row in Feed_Schedule for a given time on a specific date. We can re-use the Diet entries as many times as needed within Feed_Schedule. I wasn't exactly sure what we might want to store in terms of the Diet entries. If a zoo buys ingredients in bulk that different animals can share, perhaps they can mix and match them to get the correct macro profile for each animal? I'm not sure, so that design would depend upon the types of food and food preparation operations the zoo conducts. If I were really building this system, I would collect those requirements before creating the database design, of course. I think the remaining tables are pretty self-explanatory. 
+
+![Zoo ERD](zoo_erd.svg?raw=false "Zoo ERD")
